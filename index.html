@@ -45,13 +45,10 @@
   
         <div class="row couple text-center">
               <div class="col">
-                <h3>Lipi Amanda Putra</h3>
+                <h3>Lipi Amanda Putra, S.Kom</h3>
                 <p>(Anak ke 2)<br>Putra dari Peri Suwanto & Erma Juwita</p>
               </div>
-                        
           <span class="heart"><i class="bi bi-heart-fill"></i></span>
-
-            
               <div class="col">
                 <h3>Lince Agustia Ningsih</h3>
                 <p>(Anak ke 3)<br>Putri dari Jumadi (Alm) & Romlah</p>
@@ -125,59 +122,31 @@
         </div>
     </section>
 
-    <section id="rsvp" class="rsvp">
+    <section id="quotes-nikah" class="quotes-nikah">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <h2>Konfirmasi Kehadiran</h2>
-            <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+            <blockquote class="quran-quote" style="font-size:1.2rem;">
+              “Pernikahan bukan hanya menyatukan dua insan, tapi juga dua keluarga, dua hati, dan dua kehidupan dalam satu tujuan ibadah.”
+            </blockquote>
           </div>
         </div>
-  
-        <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-          action="https://script.google.com/macros/s/AKfycbyddFbEJRqwEeA6OmZAuNf0jw_B30ZUOS5qSDwlAKV_nurcW7H6osJx2ZWnIeTmPm_35g/exec"
-          id="my-form">
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama">
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="jumlah" class="form-label">Jumlah</label>
-              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="status" class="form-label">Konfirmasi</label>
-              <select name="status" id="status" class="form-select">
-                <option selected>Pilih salah satu</option>
-                <option value="Hadir">Hadir</option>
-                <option value="Tidak Hadir">Tidak Hadir</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-12" style="margin-top: 35px;">
-            <button class="btn btn-primary">Kirim</button>
-          </div>
-        </form>
-        </div>
-        </section>
+      </div>
+    </section>
 
         <footer>
           <div class="container">
             <div class="row">
               <div class="col text-center">
-                <small class="block">&copy; 2024 Rayhan & Raina Wedding. <br>All Rights Reserved.</small>
-                <small class="block">Design by <a href="">@endahfn</a>.</small>
+                <small class="block">&copy; 2025 Weeding Organizer. <br>All Rights Reserved.</small>
+                <small class="block">Design by azril.</small>
               </div>
             </div>
           </div>
         </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <audio id="wedding-music" src="audio/beautiful.mp3" autoplay loop style="display:none"></audio>
     <script>
         simplyCountdown('.simply-countdown', {
             year: 2025, // required
@@ -190,6 +159,15 @@
                 minutes: { singular: 'menit', plural: 'menit' },
                 seconds: { singular: 'detik', plural: 'detik' }
             },
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+          var audio = document.getElementById('wedding-music');
+          audio.volume = 0.5;
+          audio.play().catch(function() {
+            document.body.addEventListener('click', function() {
+              audio.play();
+            }, { once: true });
+          });
         });
     </script>
   </body>
