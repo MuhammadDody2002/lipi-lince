@@ -70,6 +70,40 @@ body {
   padding-bottom: 5rem;
 }
 
+/* Couple Avatar */
+.couple-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.couple-avatar img {
+  max-width: 280px;
+  height: auto;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+}
+
+.couple-avatar img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25));
+}
+
+/* Floating animation for avatar */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.couple-avatar img {
+  animation: float 4s ease-in-out infinite;
+}
+
 .home h2,
 .info h2,
 .rsvp h2, 
@@ -303,6 +337,18 @@ footer a:hover {
     .home .heart {
       margin: 10px 0;
     }
+    
+    /* Responsive avatar untuk mobile */
+    .couple-avatar img {
+      max-width: 200px;
+    }
+}
+
+/* Responsive avatar untuk tablet */
+@media (max-width: 768px) {
+  .couple-avatar img {
+    max-width: 240px;
+  }
 }
 
 .bismillah-arabic {
@@ -360,19 +406,482 @@ footer a:hover {
   transform: none;
 }
 
+/* Ucapan Section Styling */
+#ucapan-form-section, #list-ucapan-section {
+  background: linear-gradient(135deg, var(--bg) 0%, #e3f2fd 100%);
+  padding: 3rem 0;
+  position: relative;
+}
+
+#ucapan-form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('img/bg-pattern.jpg') center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+#ucapan-form-section .container, #list-ucapan-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Ucapan Styling */
+#ucapan-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#ucapan-form h2 {
+  color: var(--navy);
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#ucapan-form .form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#ucapan-form .form-control:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 0.2rem rgba(49, 73, 106, 0.25);
+  background: rgba(255, 255, 255, 1);
+}
+
+#ucapan-form .form-control::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+#ucapan-form .btn {
+  background: linear-gradient(135deg, var(--navy) 0%, #4a6b8a 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(49, 73, 106, 0.3);
+}
+
+#ucapan-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(49, 73, 106, 0.4);
+  background: linear-gradient(135deg, #4a6b8a 0%, var(--navy) 100%);
+}
+
+/* List Ucapan Styling */
+#list-ucapan-section h3 {
+  color: var(--navy);
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
 #daftar-ucapan {
-  max-height: 320px;
-  min-height: 120px;
+  max-height: 400px;
+  min-height: 150px;
   overflow-y: auto;
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  background: #f8f9fa;
-  padding: 1rem 0.7rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+#daftar-ucapan::-webkit-scrollbar {
+  width: 6px;
+}
+
+#daftar-ucapan::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#daftar-ucapan::-webkit-scrollbar-thumb {
+  background: var(--navy);
+  border-radius: 10px;
+}
+
+#daftar-ucapan::-webkit-scrollbar-thumb:hover {
+  background: #4a6b8a;
+}
+
 #daftar-ucapan .card {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#daftar-ucapan .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+#daftar-ucapan .card-body {
+  padding: 1.2rem;
+  position: relative;
+}
+
+#daftar-ucapan .card-body::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: var(--navy);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+#daftar-ucapan .card-body b {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#daftar-ucapan .card-body span {
+  color: #495057;
+  font-style: italic;
+  line-height: 1.5;
+  display: block;
+  padding-left: 1rem;
+}
+
+.text-muted.text-center {
+  color: var(--navy) !important;
+  font-style: italic;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Message */
+.success-message {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ucapan Item Animation */
+.ucapan-item {
+  animation: slideInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badge Styling */
+.badge {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+}
+
+/* Form Label Icons */
+.form-label i {
+  color: var(--navy);
+}
+
+/* Responsive adjustments for ucapan section */
+@media (max-width: 768px) {
+  #ucapan-form-section, #list-ucapan-section {
+    padding: 2rem 0;
+  }
+  
+  #ucapan-form {
+    padding: 1.5rem;
+  }
+  
+  #ucapan-form h2, #list-ucapan-section h3 {
+    font-size: 2rem;
+  }
+  
+  #daftar-ucapan {
+    max-height: 300px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #ucapan-form {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+  
+  #ucapan-form h2, #list-ucapan-section h3 {
+    font-size: 1.8rem;
+  }
+  
+  #daftar-ucapan .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floating-nav.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floating-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+.floating-nav li {
+  position: relative;
+}
+
+.floating-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: var(--navy);
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.floating-nav a:hover {
+  background: var(--navy);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(49, 73, 106, 0.3);
+}
+
+.floating-nav a.active {
+  background: var(--navy);
+  color: white;
+}
+
+/* Tooltip */
+.floating-nav li:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.floating-nav li:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--navy);
+  margin-bottom: 3px;
+  z-index: 1001;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .floating-nav {
+    bottom: 15px;
+    padding: 8px 15px;
+  }
+  
+  .floating-nav a {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .floating-nav ul {
+    gap: 3px;
+  }
+}
+
+/* Music Control Button */
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.music-control.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.music-control:hover {
+  background: var(--navy);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(49, 73, 106, 0.3);
+}
+
+.music-control i {
+  font-size: 1.4rem;
+  color: var(--navy);
+  transition: all 0.3s ease;
+}
+
+.music-control:hover i {
+  color: white;
+}
+
+.music-control.muted {
+  background: rgba(220, 53, 69, 0.95);
+}
+
+.music-control.muted i {
+  color: white;
+}
+
+.music-control.muted:hover {
+  background: #dc3545;
+  transform: scale(1.1);
+}
+
+/* Pulse animation for unmuted state */
+.music-control:not(.muted)::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  opacity: 0;
+  animation: pulse-music 2s infinite;
+}
+
+@keyframes pulse-music {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Responsive music control */
+@media (max-width: 768px) {
+  .music-control {
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .music-control i {
+    font-size: 1.2rem;
+  }
 }

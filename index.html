@@ -1,272 +1,545 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lipi & Lince Wedding</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lipi & Lince Wedding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link
     href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
     rel="stylesheet">
-    
-    <!-- simplyCountdown -->
-    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
-    <script src="countdown/simplyCountdown.min.js"></script>
 
-    <!-- Bootstrap Icons -->
+  <!-- simplyCountdown -->
+  <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+  <script src="countdown/simplyCountdown.min.js"></script>
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
-  
-  </head>
-  <body>
-    <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
-    <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center reveal-section">
-        <main>
-            <h3 class="reveal-text">Walimatul 'Urs</h3>
-            <h1 class="mempelai-caveat reveal-text">Lipi & Lince</h1>
-            <p class="reveal-text">Kepada Bapak/Ibu/Saudara/i<br>Kami mengundang Anda untuk hadir di acara pernikahan kami.</p>
-            <h2 class="reveal-text">24 | 08 | 2025</h2>
-            <div class="simply-countdown"></div>
-            <a href="#home" class="btn btn-lg mt-4">Buka undangan</a>
-        </main>
-    </section>
 
-    <section id="home" class="home reveal-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <h3 class="bismillah-arabic reveal-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h3>
-            <p class="reveal-text">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan makhluk-Nya berpasang-pasangan. Kami bermaksud menyeleggarakan pernikahan anak kami: </p>
+</head>
+
+<body>
+  <canvas id="confetti-canvas"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
+
+  <!-- Music Control Button -->
+  <div class="music-control" id="music-control">
+    <i class="bi bi-volume-up-fill" id="music-icon"></i>
+  </div>
+
+  <!-- Floating Navigation -->
+  <nav class="floating-nav" id="floating-nav">
+    <ul>
+      <li data-tooltip="Beranda">
+        <a href="#hero"><i class="bi bi-house-fill"></i></a>
+      </li>
+      <li data-tooltip="Pengantin">
+        <a href="#home"><i class="bi bi-heart-fill"></i></a>
+      </li>
+      <li data-tooltip="Waktu & Lokasi">
+        <a href="#info"><i class="bi bi-calendar-event-fill"></i></a>
+      </li>
+      <li data-tooltip="Doa">
+        <a href="#tema"><i class="bi bi-chat-quote-fill"></i></a>
+      </li>
+      <li data-tooltip="Ucapan">
+        <a href="#ucapan-form-section"><i class="bi bi-envelope-heart-fill"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <section id="hero"
+    class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center reveal-section">
+    <main>
+      <h3 class="reveal-text">Walimatul 'Urs</h3>
+      <h1 class="mempelai-caveat reveal-text">Lipi & Lince</h1>
+      <p class="reveal-text">Kepada Bapak/Ibu/Saudara/i<br>Kami mengundang Anda untuk hadir di acara pernikahan kami.
+      </p>
+      <h2 class="reveal-text">24 | 08 | 2025</h2>
+      <div class="simply-countdown"></div>
+      <a href="#home" class="btn btn-lg mt-4">Buka undangan</a>
+    </main>
+  </section>
+
+  <section id="home" class="home reveal-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h3 class="bismillah-arabic reveal-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h3>
+          <p class="reveal-text">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan
+            makhluk-Nya berpasang-pasangan. Kami bermaksud menyeleggarakan pernikahan anak kami: </p>
+        </div>
+      </div>
+
+      <!-- Couple Avatar -->
+      <div class="row justify-content-center mt-5 mb-4">
+        <div class="col-auto">
+          <div class="couple-avatar reveal-text">
+            <img src="img/couple-avatar.png" alt="Lipi & Lince Avatar" class="img-fluid">
           </div>
         </div>
-  
-        <div class="row couple text-center">
-              <div class="col">
-                <h3 class="reveal-text"><span class="mempelai-caveat">Lipi Amanda Putra, S.Kom</span></h3>
-                <p class="reveal-text">Putra Kedua dari Bapak Peri Suwanto & Ibu Erma Juwita</p>
+      </div>
+
+      <div class="row couple text-center">
+        <div class="col">
+          <h3 class="reveal-text"><span class="mempelai-caveat">Lipi Amanda Putra, S.Kom</span></h3>
+          <p class="reveal-text">Putra Kedua dari Bapak Peri Suwanto & Ibu Erma Juwita</p>
+        </div>
+        <span class="heart"><i class="bi bi-heart-fill"></i></span>
+        <div class="col">
+          <h3 class="reveal-text"><span class="mempelai-caveat">Lince Agustia Ningsih</span></h3>
+          <p class="reveal-text">Putri Ketiga dari Bapak Jumadi (Alm) & Ibu Romlah</p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12 text-center">
+          <blockquote class="quran-quote reveal-text">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan
+            pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di
+            antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
+            (kebesaran Allah) bagi kaum yang berpikir"<br><b>Qs. Ar-rum : 21</b></blockquote>
+        </div>
+      </div>
+  </section>
+
+  <section id="info" class="info reveal-section">
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="text-center">
+          <h2 class="reveal-text">- Waktu Acara -</h2>
+          <p class="reveal-text">Insya Allah rangkaian acara akan diselenggarakan pada:</p>
+        </div>
+        <div class="col-md-7 col-12">
+          <div class="card text-center text-bg-light mb-3">
+            <div class="card-header reveal-text">Masak-masak</div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <i class="bi bi-clock d-block"></i>
+                  <span class="reveal-text">08.00 S.d selesai</span>
+                </div>
+                <div class="col-md-6">
+                  <i class="bi bi-calendar3 d-block"></i>
+                  <span class="reveal-text">Sabtu, 23 Agustus 2025</span>
+                </div>
               </div>
-          <span class="heart"><i class="bi bi-heart-fill"></i></span>
-              <div class="col">
-                <h3 class="reveal-text"><span class="mempelai-caveat">Lince Agustia Ningsih</span></h3>
-                <p class="reveal-text">Putri Ketiga dari Bapak Jumadi (Alm) & Ibu Romlah</p>
+            </div>
+            <div class="card-footer reveal-text">
+              Mohon kehadiran dan doanya untuk kelancaran seluruh rangkaian acara.
+            </div>
+          </div>
+          <div class="card text-center text-bg-light mb-5">
+            <div class="card-header reveal-text">Akad Nikah & Resepsi</div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <i class="bi bi-clock d-block"></i>
+                  <span class="reveal-text">08.00 S.d selesai</span>
+                </div>
+                <div class="col-md-6">
+                  <i class="bi bi-calendar3 d-block"></i>
+                  <span class="reveal-text">Minggu, 24 Agustus 2025</span>
+                </div>
               </div>
-         </div>
-        <div class="row mt-4">
-          <div class="col-md-12 text-center">
-            <blockquote class="quran-quote reveal-text">"Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir"<br><b>Qs. Ar-rum : 21</b></blockquote>
+            </div>
+            <div class="card-footer reveal-text">
+              Mohon kehadiran dan doanya untuk kelancaran seluruh rangkaian acara.
+            </div>
           </div>
         </div>
-    </section>
+      </div>
 
-    <section id="info" class="info reveal-section">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2 class="reveal-text">- Lokasi Acara - </h2>
+          <p class="alamat reveal-text"><b>Kediaman Mempelai Perempuan</b><br>JL.TAPAK LEBAR ,TURUNAN SD XAVERIUS RT 08
+            NO 83</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2213703166412!2d102.85213217366358!3d-3.2952815411195364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e30e0fe2b214d5b%3A0x62ba7307272aae16!2sSD%20Xaverius%20Lubuklinggau!5e0!3m2!1sid!2sid!4v1753351150654!5m2!1sid!2sid"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <a href="https://maps.app.goo.gl/taLWuWdM6DhuYtBRA" target="_blank"
+            class="btn btn-light btn-sm my-3 reveal-text">Klik untuk
+            membuka peta</a>
+          <p class="description reveal-text">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu /
+            Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="special-section" class="reveal-section">
+    <section id="tema" class="tema">
       <div class="container">
         <div class="row justify-content-center mt-4">
-          <div class="text-center">
-            <h2 class="reveal-text">- Waktu Acara -</h2>
-            <p class="reveal-text">Insya Allah rangkaian acara akan diselenggarakan pada:</p>
-          </div>
-          <div class="col-md-7 col-12">
-            <div class="card text-center text-bg-light mb-3">
-              <div class="card-header reveal-text">Masak-masak</div>
-              <div class="card-body">
-                <div class="row justify-content-center">
-                  <div class="col-md-6">
-                    <i class="bi bi-clock d-block"></i>
-                    <span class="reveal-text">08.00 S.d selesai</span>
-                  </div>
-                  <div class="col-md-6">
-                    <i class="bi bi-calendar3 d-block"></i>
-                    <span class="reveal-text">Sabtu, 23 Agustus 2025</span>
-                  </div>  
-                </div>
-              </div>
-              <div class="card-footer reveal-text">
-                Mohon kehadiran dan doanya untuk kelancaran seluruh rangkaian acara.
-              </div>
-            </div>
-            <div class="card text-center text-bg-light mb-5">
-              <div class="card-header reveal-text">Akad Nikah & Resepsi</div>
-              <div class="card-body">
-                <div class="row justify-content-center">
-                  <div class="col-md-6">
-                    <i class="bi bi-clock d-block"></i>
-                    <span class="reveal-text">08.00 S.d selesai</span>
-                  </div>
-                  <div class="col-md-6">
-                    <i class="bi bi-calendar3 d-block"></i>
-                    <span class="reveal-text">Minggu, 24 Agustus 2025</span>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer reveal-text">
-                Mohon kehadiran dan doanya untuk kelancaran seluruh rangkaian acara.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <h2 class="reveal-text">- Lokasi Acara - </h2>
-            <p class="alamat reveal-text"><b>Kediaman Mempelai Perempuan</b><br>JL.TAPAK LEBAR ,TURUNAN SD XAVERIUS RT 08 NO 83</p>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2213703166412!2d102.85213217366358!3d-3.2952815411195364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e30e0fe2b214d5b%3A0x62ba7307272aae16!2sSD%20Xaverius%20Lubuklinggau!5e0!3m2!1sid!2sid!4v1753351150654!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  
-            <a href="https://maps.app.goo.gl/taLWuWdM6DhuYtBRA" target="_blank" class="btn btn-light btn-sm my-3 reveal-text">Klik untuk
-              membuka peta</a>
-            <p class="description reveal-text">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu / Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.</p>
+            <h2 class="reveal-text">- Doa untuk Pengantin -</h2>
+            <p class="reveal-text">Barakallahu laka wa baraka ‘alaika wa jama’a bainakuma fi khayr<br>
+              “Semoga Allah memberikan keberkahan padamu dan mengumpulkan kalian berdua dalam kebaikan”<br>
+              Semoga menjadi keluarga yang sakinah mawaddah warahmah. Aamiin.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="special-section" class="reveal-section">
-      <section id="tema" class="tema">
-        <div class="container">
-          <div class="row justify-content-center mt-4">
-            <div class="col-md-8 col-10 text-center">
-              <h2 class="reveal-text">- Doa untuk Pengantin -</h2>
-              <p class="reveal-text">Barakallahu laka wa baraka ‘alaika wa jama’a bainakuma fi khayr<br>
-                “Semoga Allah memberikan keberkahan padamu dan mengumpulkan kalian berdua dalam kebaikan”<br>
-                Semoga menjadi keluarga yang sakinah mawaddah warahmah. Aamiin.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="quotes-nikah" class="quotes-nikah">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8 col-10 text-center">
-              <blockquote class="quran-quote reveal-text" style="font-size:1.2rem;">
-                “Pernikahan bukan hanya menyatukan dua insan, tapi juga dua keluarga, dua hati, dan dua kehidupan dalam satu tujuan ibadah.”
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Session 1: Form Ucapan -->
-      <section id="ucapan-form-section" class="container my-5">
+    <section id="quotes-nikah" class="quotes-nikah">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-7 col-12">
-            <h2 class="text-center mb-3">Kirim Ucapan untuk Pengantin</h2>
-            <form id="ucapan-form" class="mb-4">
-              <div class="mb-2">
-                <input type="text" class="form-control" id="nama-ucapan" placeholder="Nama Anda" required>
+          <div class="col-md-8 col-10 text-center">
+            <blockquote class="quran-quote reveal-text" style="font-size:1.2rem;">
+              “Pernikahan bukan hanya menyatukan dua insan, tapi juga dua keluarga, dua hati, dan dua kehidupan dalam
+              satu tujuan ibadah.”
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session 1: Form Ucapan -->
+    <section id="ucapan-form-section" class="container-fluid">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-12">
+            <div class="text-center mb-4">
+              <h2 class="reveal-text">💌 Kirim Ucapan untuk Pengantin</h2>
+              <p class="reveal-text text-muted">Sampaikan doa dan ucapan terbaik untuk kedua mempelai</p>
+            </div>
+            <form id="ucapan-form" class="reveal-text">
+              <div class="mb-3">
+                <label for="nama-ucapan" class="form-label">
+                  <i class="bi bi-person-fill me-2"></i>Nama Anda
+                </label>
+                <input type="text" class="form-control" id="nama-ucapan" placeholder="Masukkan nama lengkap Anda"
+                  required>
               </div>
-              <div class="mb-2">
-                <textarea class="form-control" id="isi-ucapan" rows="2" placeholder="Tulis ucapan..." required></textarea>
+              <div class="mb-3">
+                <label for="isi-ucapan" class="form-label">
+                  <i class="bi bi-chat-heart-fill me-2"></i>Ucapan & Doa
+                </label>
+                <textarea class="form-control" id="isi-ucapan" rows="4"
+                  placeholder="Tulis ucapan dan doa terbaik untuk kedua mempelai..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Kirim Ucapan</button>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-send-fill me-2"></i>Kirim Ucapan
+                </button>
+                <div id="success-message" class="success-message">
+                  <i class="bi bi-check-circle-fill me-2"></i>Ucapan berhasil dikirim!
+                </div>
+              </div>
             </form>
           </div>
         </div>
-      </section>
-
-      <!-- Session 2: List Ucapan -->
-      <section id="list-ucapan-section" class="container mb-5">
-        <div class="row justify-content-center">
-          <div class="col-md-7 col-12">
-            <h3 class="text-center mb-3">Daftar Ucapan</h3>
-            <div id="daftar-ucapan">
-              <!-- Daftar ucapan akan muncul di sini -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col text-center">
-              <small class="block reveal-text">&copy; 2025 Weeding Organizer. <br>All Rights Reserved.</small>
-              <small class="block reveal-text">Design by azril.</small>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <audio id="wedding-music" src="audio/beautiful.mp3" autoplay loop style="display:none"></audio>
-    <script src="confetti.js"></script>
-    <script src="reveal.js"></script>
-    <script>
-        simplyCountdown('.simply-countdown', {
-            year: 2025, // required
-            month: 8, // required
-            day: 24, // required
-            hours: 8, // Default is 0 [0-23] integer
-            words: { //words displayed into the countdown
-                days: { singular: 'hari', plural: 'hari' },
-                hours: { singular: 'jam', plural: 'jam' },
-                minutes: { singular: 'menit', plural: 'menit' },
-                seconds: { singular: 'detik', plural: 'detik' }
-            },
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-          var audio = document.getElementById('wedding-music');
-          audio.volume = 0.5;
-          audio.play().catch(function() {
-            document.body.addEventListener('click', function() {
-              audio.play();
-            }, { once: true });
-          });
-        });
-    </script>
-    <script>
-      // === Ucapan Pengantin Google Apps Script Integration ===
-      const UCAPAN_API = 'https://script.google.com/macros/s/AKfycbxix8fvylLb2VYMe6hd9qqRyaqxd8jWTUKfHN0Q-x2oB-UKlf9762tYmz6JGClqg6Eh5A/exec';
-      const form = document.getElementById('ucapan-form');
-      const daftarUcapan = document.getElementById('daftar-ucapan');
+    <!-- Session 2: List Ucapan -->
+    <section id="list-ucapan-section" class="container-fluid">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-12">
+            <div class="text-center mb-4">
+              <h3 class="reveal-text">💝 Ucapan dari Teman & Keluarga</h3>
+              <p class="reveal-text text-muted">Doa dan ucapan terbaik dari orang-orang terkasih</p>
+            </div>
+            <div id="daftar-ucapan" class="reveal-text">
+              <div class="text-center">
+                <div class="loading-spinner"></div>
+                <p class="mt-2">Memuat ucapan...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // Tampilkan daftar ucapan
-      function loadUcapan() {
-        fetch(UCAPAN_API)
-          .then(res => res.json())
-          .then(data => {
-            daftarUcapan.innerHTML = '';
-            if (data.length === 0) {
-              daftarUcapan.innerHTML = '<div class="text-muted text-center">Belum ada ucapan.</div>';
-              return;
-            }
-            data.reverse().slice(0, 20).forEach(u => {
-              const el = document.createElement('div');
-              el.className = 'card mb-2';
-              el.innerHTML = `<div class="card-body"><b>${u.nama}</b><br><span>${u.ucapan}</span></div>`;
-              daftarUcapan.appendChild(el);
-            });
-          });
-      }
-      loadUcapan();
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="block reveal-text">&copy; 2025 Weeding Organizer. <br>All Rights Reserved.</small>
+            <small class="block reveal-text">Design by azril.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
 
-      // Submit ucapan
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const nama = document.getElementById('nama-ucapan').value.trim();
-        const ucapan = document.getElementById('isi-ucapan').value.trim();
-        if (!nama || !ucapan) return;
-        const formData = new FormData();
-        formData.append('nama', nama);
-        formData.append('ucapan', ucapan);
-        fetch(UCAPAN_API, {
-          method: 'POST',
-          body: formData
-        })
-        .then(res => res.json())
-        .then(() => {
-          form.reset();
-          loadUcapan();
-        });
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <audio id="wedding-music" src="audio/beautiful.mp3" autoplay loop style="display:none"></audio>
+  <script src="confetti.js"></script>
+  <script src="reveal.js"></script>
+  <script>
+    simplyCountdown('.simply-countdown', {
+      year: 2025, // required
+      month: 8, // required
+      day: 24, // required
+      hours: 8, // Default is 0 [0-23] integer
+      words: { //words displayed into the countdown
+        days: { singular: 'hari', plural: 'hari' },
+        hours: { singular: 'jam', plural: 'jam' },
+        minutes: { singular: 'menit', plural: 'menit' },
+        seconds: { singular: 'detik', plural: 'detik' }
+      },
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      var audio = document.getElementById('wedding-music');
+      audio.volume = 0.5;
+      audio.play().catch(function () {
+        document.body.addEventListener('click', function () {
+          audio.play();
+        }, { once: true });
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script>
+    // === Music Control ===
+    const musicControl = document.getElementById('music-control');
+    const musicIcon = document.getElementById('music-icon');
+    const audio = document.getElementById('wedding-music');
+    let isMuted = false;
+
+    // Show music control after a short delay
+    setTimeout(() => {
+      musicControl.classList.add('show');
+    }, 2000);
+
+    // Music control functionality
+    musicControl.addEventListener('click', function () {
+      if (isMuted) {
+        // Unmute
+        audio.muted = false;
+        musicIcon.className = 'bi bi-volume-up-fill';
+        musicControl.classList.remove('muted');
+        isMuted = false;
+      } else {
+        // Mute
+        audio.muted = true;
+        musicIcon.className = 'bi bi-volume-mute-fill';
+        musicControl.classList.add('muted');
+        isMuted = true;
+      }
+    });
+
+    // === Floating Navigation ===
+    const floatingNav = document.getElementById('floating-nav');
+    const navLinks = document.querySelectorAll('.floating-nav a');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Show/hide floating nav based on scroll position
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+
+      // Show nav after scrolling past hero section
+      if (scrollY > window.innerHeight * 0.3) {
+        floatingNav.classList.add('show');
+      } else {
+        floatingNav.classList.remove('show');
+      }
+
+      // Update active nav item based on current section
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 20;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Smooth scrolling untuk semua anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 20;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // === Ucapan Pengantin Google Apps Script Integration ===
+    const UCAPAN_API = 'https://script.google.com/macros/s/AKfycbyf5zHGkgmL80O-f29zw-re05yQbIsLsJhG6ngW8dwYHFt53MX57JxcyNr-4i8bwQ5C-g/exec';
+    const form = document.getElementById('ucapan-form');
+    const daftarUcapan = document.getElementById('daftar-ucapan');
+    const successMessage = document.getElementById('success-message');
+
+    // Tampilkan daftar ucapan
+    function loadUcapan() {
+      daftarUcapan.innerHTML = `
+          <div class="text-center">
+            <div class="loading-spinner"></div>
+            <p class="mt-2">Memuat ucapan...</p>
+          </div>
+        `;
+
+      fetch(UCAPAN_API)
+        .then(res => res.json())
+        .then(data => {
+          daftarUcapan.innerHTML = '';
+          if (data.length === 0) {
+            daftarUcapan.innerHTML = `
+                <div class="text-muted text-center">
+                  <i class="bi bi-chat-dots-fill" style="font-size: 3rem; opacity: 0.5;"></i>
+                  <p class="mt-2">Belum ada ucapan. Jadilah yang pertama!</p>
+                </div>
+              `;
+            return;
+          }
+          data.reverse().slice(0, 20).forEach((u, index) => {
+            const el = document.createElement('div');
+            el.className = 'card mb-3 ucapan-item';
+            el.style.animationDelay = `${index * 0.1}s`;
+
+            const waktu = u.timestamp ? formatWaktu(u.timestamp) : '';
+
+            el.innerHTML = `
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <b><i class="bi bi-person-circle me-2"></i>${u.nama}</b>
+                    ${waktu ? `<small class="text-muted">${waktu}</small>` : ''}
+                  </div>
+                  <span>${u.ucapan}</span>
+                </div>
+              `;
+            daftarUcapan.appendChild(el);
+          });
+        })
+        .catch(error => {
+          console.error('Error loading ucapan:', error);
+          daftarUcapan.innerHTML = `
+              <div class="text-center text-danger">
+                <i class="bi bi-exclamation-triangle-fill" style="font-size: 3rem;"></i>
+                <p class="mt-2">Gagal memuat ucapan. Silakan refresh halaman.</p>
+              </div>
+            `;
+        });
+    }
+
+    // Format waktu relatif
+    function formatWaktu(timestamp) {
+      const now = new Date();
+      const time = new Date(timestamp);
+      const diff = now - time;
+      const minutes = Math.floor(diff / 60000);
+      const hours = Math.floor(diff / 3600000);
+      const days = Math.floor(diff / 86400000);
+
+      if (minutes < 1) return 'Baru saja';
+      if (minutes < 60) return `${minutes} menit lalu`;
+      if (hours < 24) return `${hours} jam lalu`;
+      if (days < 7) return `${days} hari lalu`;
+      return time.toLocaleDateString('id-ID');
+    }
+
+    // Show success message
+    function showSuccessMessage() {
+      successMessage.classList.add('show');
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 3000);
+    }
+
+    // Load ucapan saat halaman dimuat
+    loadUcapan();
+
+    // Submit ucapan
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+
+      // Disable form dan show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="loading-spinner me-2"></span>Mengirim...';
+
+      const nama = document.getElementById('nama-ucapan').value.trim();
+      const ucapan = document.getElementById('isi-ucapan').value.trim();
+
+      if (!nama || !ucapan) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        return;
+      }
+
+      // Gunakan URLSearchParams untuk kompatibilitas yang lebih baik
+      const formData = new URLSearchParams();
+      formData.append('nama', nama);
+      formData.append('ucapan', ucapan);
+      formData.append('timestamp', new Date().toISOString());
+
+      fetch(UCAPAN_API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        mode: 'no-cors',
+        body: formData
+      })
+        .then(() => {
+          // Karena menggunakan no-cors, response tidak bisa dibaca
+          // Langsung anggap berhasil dan refresh data
+          form.reset();
+          showSuccessMessage();
+          // Delay sedikit untuk memastikan data tersimpan di server
+          setTimeout(() => {
+            loadUcapan();
+          }, 1000);
+        })
+        .catch(error => {
+          console.error('Error submitting ucapan:', error);
+          alert('Gagal mengirim ucapan. Silakan coba lagi.');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+    });
+  </script>
+</body>
+
 </html>
