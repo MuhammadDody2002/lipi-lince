@@ -292,6 +292,13 @@ footer a:hover {
       margin-right: auto;
       float: none;
     }
+    .row.couple {
+      flex-direction: column;
+      align-items: center;
+    }
+    .home .heart {
+      margin: 10px 0;
+    }
 }
 
 .bismillah-arabic {
@@ -312,4 +319,29 @@ footer a:hover {
   padding: 0;
   border-radius: 0;
   display: block;
+}
+
+.nama-caveat {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mempelai-caveat {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5 rem;
+  font-weight: normal;
+  color: inherit;
+}
+
+.hero .mempelai-caveat {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5 rem;
+  color: var(--navy);
+}
+
+.info h2,
+.tema h2,
+.home h2 {
+  font-size: 2.5rem;
 }
