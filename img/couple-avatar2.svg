@@ -1,0 +1,59 @@
+<svg width="280" height="200" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="280" height="200" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Groom (Left) -->
+  <g transform="translate(60, 40)">
+    <!-- Head -->
+    <circle cx="30" cy="30" r="25" fill="#fdbcb4"/>
+    <!-- Hair -->
+    <path d="M 5 30 Q 5 5 30 5 Q 55 5 55 30 Q 55 15 45 15 Q 35 10 25 15 Q 15 15 5 30" fill="#8b4513"/>
+    <!-- Eyes -->
+    <circle cx="22" cy="25" r="2" fill="#2c3e50"/>
+    <circle cx="38" cy="25" r="2" fill="#2c3e50"/>
+    <!-- Smile -->
+    <path d="M 20 35 Q 30 42 40 35" stroke="#2c3e50" stroke-width="2" fill="none"/>
+    <!-- Body (Suit) -->
+    <rect x="15" y="55" width="30" height="40" fill="#2c3e50" rx="5"/>
+    <!-- Shirt -->
+    <rect x="20" y="60" width="20" height="35" fill="#ffffff"/>
+    <!-- Tie -->
+    <rect x="27" y="65" width="6" height="25" fill="#e74c3c"/>
+    <!-- Arms -->
+    <rect x="5" y="60" width="8" height="25" fill="#fdbcb4" rx="4"/>
+    <rect x="47" y="60" width="8" height="25" fill="#fdbcb4" rx="4"/>
+  </g>
+  
+  <!-- Bride (Right) -->
+  <g transform="translate(160, 40)">
+    <!-- Head -->
+    <circle cx="30" cy="30" r="25" fill="#fdbcb4"/>
+    <!-- Hair -->
+    <path d="M 5 30 Q 5 8 30 8 Q 55 8 55 30 Q 50 20 45 25 Q 40 18 35 20 Q 30 15 25 20 Q 20 18 15 25 Q 10 20 5 30" fill="#8b4513"/>
+    <!-- Veil -->
+    <path d="M 10 25 Q 30 5 50 25 Q 45 35 40 40 Q 35 45 30 45 Q 25 45 20 40 Q 15 35 10 25" fill="#ffffff" opacity="0.8"/>
+    <!-- Eyes -->
+    <circle cx="22" cy="25" r="2" fill="#2c3e50"/>
+    <circle cx="38" cy="25" r="2" fill="#2c3e50"/>
+    <!-- Smile -->
+    <path d="M 20 35 Q 30 42 40 35" stroke="#2c3e50" stroke-width="2" fill="none"/>
+    <!-- Body (Dress) -->
+    <path d="M 15 55 L 45 55 L 50 95 L 10 95 Z" fill="#ffffff"/>
+    <!-- Arms -->
+    <rect x="5" y="60" width="8" height="25" fill="#fdbcb4" rx="4"/>
+    <rect x="47" y="60" width="8" height="25" fill="#fdbcb4" rx="4"/>
+    <!-- Flowers on dress -->
+    <circle cx="25" cy="70" r="3" fill="#f39c12"/>
+    <circle cx="35" cy="75" r="3" fill="#e91e63"/>
+    <circle cx="30" cy="85" r="3" fill="#9b59b6"/>
+  </g>
+  
+  <!-- Heart between them -->
+  <g transform="translate(130, 60)">
+    <path d="M 10 8 C 10 3, 3 3, 3 8 C 3 3, -4 3, -4 8 C -4 13, 10 25, 10 25 C 10 25, 24 13, 24 8 C 24 3, 17 3, 17 8 C 17 3, 10 3, 10 8 Z" fill="#e74c3c"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="140" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Lipi &amp; Lince</text>
+  <text x="140" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d">24 Agustus 2025</text>
+</svg>

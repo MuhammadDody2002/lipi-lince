@@ -1,0 +1,15 @@
+# Vercel ignore file
+# Pastikan gambar tidak diabaikan
+!img/
+!img/*
+!audio/
+!audio/*
+!countdown/
+!countdown/*
+
+# Ignore hanya file yang tidak diperlukan
+.DS_Store
+*.log
+node_modules/
+.env.local
+.env.production.local
